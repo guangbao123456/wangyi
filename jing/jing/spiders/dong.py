@@ -13,7 +13,7 @@ class DongSpider(scrapy.Spider):
         #前30个数据静态的可以直接xpath抓取
         all=response.xpath("//ul[@class='gl-warp clearfix']/li/div")
         for a in all:
-            title=a.xpath("//div[@class='p-name p-name-type-2']/a/em/text()").extract()[0]
+            title=a.xpath(".//div[@class='p-name p-name-type-2']/a/em/text()").extract()[0]
             price=a.xpath("./div[@class='p-price']/strong/i/text()").extract()[0]
 
             print(price)
